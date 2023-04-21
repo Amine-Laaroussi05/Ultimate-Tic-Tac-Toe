@@ -1,0 +1,61 @@
+# __Feuille de route
+
+## Fonctionnement du tour de jeu
+
+À chaque tour de jeu, le joueur ou le joueur adverse saisissent deux entiers désignant la coordonnée de la ligne et la  coordonnée de la colonne où ils placent leur symbole de jeu.
+
+## Paramètres du jeu
+
+### Entrées pour un tour de jeu
+
+- oponnentRow : la coordonnée de la ligne saisi par l'adversaire dans le tour précédent
+
+- oponnentCol : la coordonnée de la colonne saisi par l'adversaire dans le tour précédent
+
+- validActionCount : le nombre d'action valides pour ce tour de jeu
+
+### Sorties pour un tour de jeu
+
+- row : la coordonnée de la ligne
+
+- col : la coordonnée de la colonne 
+
+---
+
+## Stratégie de développement
+
+1. Boucle de jeu pour le lancement des tours
+
+2. Arrêt de la boucle en cas d'alignement de 3 symboles identiques **ou** si le nombre d'actions a été réduit à 0
+
+3. Début de tour : saisi du joueur des entiers **row** et **col**
+
+4. Vérification que les entiers saisis sont valides
+
+5. Détermination de la condition de victoire
+
+6.  Vérification du nombre d'actions restants
+
+7. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
+
+## Evolution suivante envisagée
+
+1. Analyse du jeu de l'adversaire et saisi d'entiers convenables à la situation de jeu
+
+2. Mise en test avec un mode de jeu aléatoire de l'adversaire
+
+3. Adaptation au coding game
+
+
+
+
+
+
+
+
+
+
+
+
+
+
