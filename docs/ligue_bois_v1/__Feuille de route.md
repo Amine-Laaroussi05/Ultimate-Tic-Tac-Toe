@@ -34,7 +34,7 @@
 
 5. Détermination de la condition de victoire
 
-6.  Vérification du nombre d'actions restants
+6. Vérification du nombre d'actions restants
 
 7. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
 
@@ -45,17 +45,3 @@
 2. Mise en test avec un mode de jeu aléatoire de l'adversaire
 
 3. Adaptation au coding game
-
-
-
-
-
-
-
-
-
-
-
-
-
-
