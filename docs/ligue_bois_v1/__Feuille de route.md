@@ -2,23 +2,23 @@
 
 ## Fonctionnement du tour de jeu
 
-À chaque tour de jeu, le joueur ou le joueur adverse saisissent deux entiers désignant la coordonnée de la ligne et la  coordonnée de la colonne où ils placent leur symbole de jeu.
+À chaque tour de jeu, le joueur ou le joueur adverse saisissent deux entiers désignant la coordonnée de la ligne et la  coordonnée de la colonne où ils vont placer leur symbole de jeu.
 
-## Paramètres du jeu
+## Paramètres de jeu
 
 ### Entrées pour un tour de jeu
 
-- oponnentRow : la coordonnée de la ligne saisi par l'adversaire dans le tour précédent
+- `oponnentRow` : la coordonnée de la ligne saisi par l'adversaire dans le tour précédent
 
-- oponnentCol : la coordonnée de la colonne saisi par l'adversaire dans le tour précédent
+- `oponnentCol` : la coordonnée de la colonne saisi par l'adversaire dans le tour précédent
 
-- validActionCount : le nombre d'action valides pour ce tour de jeu
+- `validActionCount` : le nombre d'action valides pour ce tour de jeu
 
 ### Sorties pour un tour de jeu
 
-- row : la coordonnée de la ligne
+- `row` : la coordonnée de la ligne
 
-- col : la coordonnée de la colonne 
+- `col` : la coordonnée de la colonne 
 
 ---
 

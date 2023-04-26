@@ -22,7 +22,7 @@ public static boolean conditionDeVictoire(int entier){
 
 1. Entier compris entre 1 et 512
 
-2.  Condition non vérifiée
+2. Condition non vérifiée
    
    > entier = 1, 2, 3, 10, 25, 400
 
@@ -30,6 +30,12 @@ public static boolean conditionDeVictoire(int entier){
    
    > entier = 73, 146, 292, 7, 56, 448, 273, 84
 
-4. Aléatoirement
+4. Avec un test aléatoire
 
+---
 
+## Formalisme de la méthode
+
+1. Si l'ensemble contient cet entier, la condition est vérifiée
+
+2. Si l'ensemble ne contient pas cet entier, la condition n'est pas vérifiée
