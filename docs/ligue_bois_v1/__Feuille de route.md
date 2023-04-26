@@ -32,13 +32,15 @@
 
 4. Vérification que les entiers saisis sont valides
 
-5. Détermination de la condition de victoire
+5. Application de la méthode `calculJoueur`  
 
-6. Vérification du nombre d'actions restants
+6. Détermination de la condition de victoire (en appliquant les méthodes `conditionVictoire` et `positionSymboles`)
 
-7. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
+7. Vérification du nombre d'actions restants
 
-## Evolution suivante envisagée
+8. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
+
+## Étape suivante envisagée
 
 1. Analyse du jeu de l'adversaire et saisi d'entiers convenables à la situation de jeu
 
