@@ -2,7 +2,7 @@
 
 ## Description
 
-Permet d'assigner à un joueur un entier qui encode la position des symboles du joueur.
+Permet d'assigner à un joueur un entier qui encode la position des symboles joués du joueur.
 
 ## Syntaxe
 
