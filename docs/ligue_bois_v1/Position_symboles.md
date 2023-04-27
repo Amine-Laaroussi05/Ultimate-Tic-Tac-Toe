@@ -55,5 +55,3 @@ public static Arraylist[Integer] positionSymboles(int calculJoueur){
 6. Calcul à partir de ces données de la somme en 2^n obtenue
 
 7. Déduction des emplacements et sauvegarde du résultat dans la liste `listeEmplacement`
-
-
