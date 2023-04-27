@@ -3,6 +3,12 @@ import java.util.ArrayList;
 public class Main {
 
 
+    /**
+     * Permet d'effectuer une opération sur les coordonnées pour calculer un entier encodant l'emplacement du symbole.
+     * @param rowCoord : 1ère coordonnée de ligne
+     * @param colCoord : 2ème coordonnée de colonne
+     * @return : 2^(n° de la case)
+     */
     public static int calculJoueur(int rowCoord, int colCoord){
         ArrayList<Integer> listCoordonnesValides  = new ArrayList<>(); // La liste des coordonnées valides
         int entierCalcule = rowCoord + colCoord; // L'entier qui sera calculé par la méthode
@@ -13,6 +19,14 @@ public class Main {
         if(rowCoord == 1) entierCalcule += 2;
         else if(rowCoord == 2) entierCalcule += 4;
         return (int) Math.pow(2,entierCalcule);
+    }
+
+
+
+    public static ArrayList<Integer> positionSymboles(int entierJoueur){
+        ArrayList<Integer> listeEmplacement = new ArrayList<>();
+        if(entierJoueur > 512 | entierJoueur < 0) throw new IllegalArgumentException();
+        return listeEmplacement;
     }
 
 

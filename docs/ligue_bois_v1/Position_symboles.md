@@ -7,14 +7,14 @@ Détermine la position des symboles joués par le joueur à partir de l'entier a
 ## Syntaxe
 
 ```java
-public static Arraylist[Integer] positionSymboles(int calculJoueur){
+public static Arraylist[Integer] positionSymboles(int entierJoueur){
     // Factorisation de l'entier en une somme de 2^n
 }
 ```
 
 ## Données
 
-- `calculJoueur` : l'entier affecté au joueur et dont sera déduit les positions des symboles joués par le joueur
+- `entierJoueur` : l'entier affecté au joueur et dont sera déduit les positions des symboles joués par le joueur
 
 - `listeEmplacement` : La liste des emplacments des symboles joués par le joueur
 
