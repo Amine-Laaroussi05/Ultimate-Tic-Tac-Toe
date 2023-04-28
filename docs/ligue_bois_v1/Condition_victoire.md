@@ -30,7 +30,7 @@ public static boolean conditionDeVictoire(int entier){
    
    > entier = 73, 146, 292, 7, 56, 448, 273, 84
 
-4. Avec un test aléatoire
+4. 
 
 ---
 

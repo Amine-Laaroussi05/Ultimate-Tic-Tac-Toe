@@ -1,12 +1,8 @@
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import java.lang.reflect.Parameter;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -85,10 +81,24 @@ class MainTest {
         assertEquals(listeEmplacementsAttendue,Main.positionSymboles(entierJoueur));
     }
 
-    @RepeatedTest(10)
-    public void positionSymbolesRandom(){
-        Random random = new Random();
-        int entierJoueur = random.ints(1,0,513).iterator().nextInt();
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Test pour la méthode Condition_de_Victoire
+     */
+    @ParameterizedTest
+    @CsvFileSource(resources = "/condition_de_Victoire/Echantillon_Test.csv", numLinesToSkip = 1)
+    public void conditionDeVictoireTest(int entierJoueur, boolean conditionAttendu){
+        if(conditionAttendu) assertTrue(Main.conditionDeVictoire(entierJoueur));
+        else assertFalse(Main.conditionDeVictoire(entierJoueur));
     }
 
 

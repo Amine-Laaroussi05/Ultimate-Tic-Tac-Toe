@@ -32,7 +32,7 @@ public static int calculJoueur(int rowCoord, int colCoord,){
    
    - 3ème ligne, 3ème colonne
 
-3. Avec un test aléatoire
+3. 
 
 ---
 

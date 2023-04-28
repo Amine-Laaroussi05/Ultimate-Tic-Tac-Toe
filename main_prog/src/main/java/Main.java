@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -24,7 +22,11 @@ public class Main {
     }
 
 
-
+    /**
+     * Détermine l'emplacement des symboles du joueur
+     * @param entierJoueur : l'entier affecté au joueur (durant toute la partie) selon les coordonnées qu'il a saisies
+     * @return : L'ensemble des emplacements des symboles du joueur
+     */
     public static Set<Integer> positionSymboles(int entierJoueur){
         Set<Integer> listeEmplacement = new HashSet<>();
         if(entierJoueur > 512 | entierJoueur < 0) throw new IllegalArgumentException();
@@ -35,6 +37,18 @@ public class Main {
             }
         }
         return listeEmplacement;
+    }
+
+
+    /**
+     * Évalue si la condition de victoire (à savoir l'alignement des symboles du joueur en vertical, horizontal ou diagonale) est vérifiée
+     * @param entierJoueur : l'entier affecté au joueur selon les coordonnées qu'il a saisies le long de la partie
+     * @return : true ou false selon si les symboles sont alignés ou pas
+     */
+    public static boolean conditionDeVictoire(int entierJoueur){
+        List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448);
+        Set<Integer> listeEntiersPredefinis = new HashSet<>(entiersPredefinis);
+        return listeEntiersPredefinis.contains(entierJoueur);
     }
 
 

@@ -36,7 +36,7 @@ public static Arraylist[Integer] positionSymboles(int entierJoueur){
 
 - Quatre emplacements
 
-- Test aléatoire
+- 
 
 ---
 
