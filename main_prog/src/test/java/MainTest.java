@@ -1,9 +1,15 @@
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+import java.lang.reflect.Parameter;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,9 +76,13 @@ class MainTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/position_Symboles/Echantillon_Test.csv",numLinesToSkip = 1)
-    public void positionSymbolesTest(int entierJoueur,int tailleListe, int entier1, int entier2, int entier3, int entier4){
-        
-
+    public void positionSymbolesTest(int entierJoueur, String listeEntiers){
+        Set<Integer> listeEmplacementsAttendue = new HashSet<>();
+        String[] listeSplit = listeEntiers.split(" ");
+        for (String s : listeSplit) {
+            listeEmplacementsAttendue.add(Integer.parseInt(s));
+        }
+        assertEquals(listeEmplacementsAttendue,Main.positionSymboles(entierJoueur));
     }
 
     @RepeatedTest(10)

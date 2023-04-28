@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
@@ -23,9 +25,15 @@ public class Main {
 
 
 
-    public static ArrayList<Integer> positionSymboles(int entierJoueur){
-        ArrayList<Integer> listeEmplacement = new ArrayList<>();
+    public static Set<Integer> positionSymboles(int entierJoueur){
+        Set<Integer> listeEmplacement = new HashSet<>();
         if(entierJoueur > 512 | entierJoueur < 0) throw new IllegalArgumentException();
+        for(int indice = 8; indice > -1; indice--){
+            if(entierJoueur >= Math.pow(2,indice)){
+                listeEmplacement.add(indice);
+                entierJoueur -= Math.pow(2,indice);
+            }
+        }
         return listeEmplacement;
     }
 
