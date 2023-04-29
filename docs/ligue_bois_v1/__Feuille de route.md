@@ -36,9 +36,11 @@
 
 6. Détermination de la condition de victoire (en appliquant les méthodes `conditionVictoire` et `positionSymboles`)
 
-7. Vérification du nombre d'actions restants
+7. Illustration du jeu
 
-8. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
+8. Vérification du nombre d'actions restants
+
+9. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
 
 ## Étape suivante envisagée
 
