@@ -53,6 +53,13 @@ public class Main {
 
 
 
+
+    public static void illustrationJeu(int entierJoueur1, int entierJoueur2){
+
+    }
+
+
+
     public static void main(String[] args) {
 
     }

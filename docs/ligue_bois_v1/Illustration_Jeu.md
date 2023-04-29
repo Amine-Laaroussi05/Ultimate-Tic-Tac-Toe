@@ -44,7 +44,7 @@ public static void illustrationJeu(int entierJoueur1, int entierJoueur2){
 
 4. Victoire au 5ème tour
    
-   - cases n°1 et n°7 : cases n°4, n°5 et n°6
+   - cases n°4, n°5 et n°6 : n°1 et n°7 
 
 5. Grille remplie avec un vainqueur 
    

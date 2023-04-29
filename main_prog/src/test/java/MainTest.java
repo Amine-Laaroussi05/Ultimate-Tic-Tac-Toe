@@ -3,11 +3,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
+
 
 class MainTest {
 
@@ -99,6 +102,49 @@ class MainTest {
     public void conditionDeVictoireTest(int entierJoueur, boolean conditionAttendu){
         if(conditionAttendu) assertTrue(Main.conditionDeVictoire(entierJoueur));
         else assertFalse(Main.conditionDeVictoire(entierJoueur));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Test pour la méthode Illustration_Jeu
+     */
+    @ParameterizedTest
+    @CsvFileSource(resources = "/illustration_Jeu/Echantillon_Test", numLinesToSkip = 1)
+    public void illustrationJeu(int entierJoueur1, int entierJoueur2,String symbolesJoueur1, String symbolesJoueur2) throws Exception {
+        String[] listeStringJoueur1 = symbolesJoueur1.split(" ");
+        String[] listeStringJoueur2 = symbolesJoueur2.split(" ");
+        ArrayList<Integer> listeJoueur1 = new ArrayList<>();
+        for (String s : listeStringJoueur1) listeJoueur1.add(Integer.parseInt(s));
+        ArrayList<Integer> listeJoueur2 = new ArrayList<>();
+        for (String s : listeStringJoueur2) listeJoueur2.add(Integer.parseInt(s));
+        String texte = tapSystemOut(() -> {
+            String ligne1 = "**********";
+            ArrayList<StringBuilder> lignes = new ArrayList<>();
+            for(int numeroLigne = 0; numeroLigne<3; numeroLigne++){
+                StringBuilder ligne = new StringBuilder("|");
+                for(int indice=0; indice<3; indice++){
+                    if(listeJoueur1.contains(indice+2*numeroLigne)) ligne.append("x");
+                    else if(listeJoueur2.contains(indice+2*numeroLigne)) ligne.append("o");
+                    else ligne.append(" ");
+                    ligne.append("|");
+                }
+                lignes.add(ligne);
+            }
+            String ligne5 = "**********";
+        });
     }
 
 
