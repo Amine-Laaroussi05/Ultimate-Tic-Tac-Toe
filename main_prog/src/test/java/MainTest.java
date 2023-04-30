@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -13,6 +12,10 @@ import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 
 
 class MainTest {
+
+
+    // ________________________________________________Calcul_joueur________________________________________________________
+
 
     /**
      * Tests pour la méthode Calcul_joueur
@@ -55,7 +58,7 @@ class MainTest {
 
 
 
-
+// _____________________________________________Position_Symboles_________________________________________________________
 
 
 
@@ -88,6 +91,7 @@ class MainTest {
 
 
 
+// _______________________________________________Condition_de_Victoire___________________________________________________________
 
 
 
@@ -109,6 +113,7 @@ class MainTest {
 
 
 
+// _______________________________________________Illustration_Jeu_________________________________________________________
 
 
 
@@ -148,7 +153,40 @@ class MainTest {
     }
 
 
-    @Test
-    void main() {
+
+
+
+
+
+
+
+
+    // _________________________________________________main____________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * Test du programme sur un tour particulier
+     * @param numeroTour : le n° du tour
+     * @param initiative : le tour du joueur qui va saisir les coordonnées, au tour du joueur1 si true, au tour du joueur2 si false
+     * @param entierJoueur1 : l'entier affecté au joueur 1 selon ce qu'il a saisi précédemment comme coordonnées
+     * @param entierJoueur2 : l'entier affecté au joueur 2 selon ce qu'il a saisi précédemment comme coordonnées
+     * @param rowCoord : l'entier de ligne saisi par le joueur
+     * @param colCoord : l'entier de colonne saisi par le joueur
+     * @param symbolesJoueur1 : ce qui est attendu comme ensemble des emplacements du symbole du joueur 1
+     * @param symbolesJoueur2 : ce qui est attendu comme ensemble des emplacements du symbole du joueur 2
+     */
+    @ParameterizedTest
+    @CsvFileSource(resources = "/", numLinesToSkip = 1)
+    void main(int numeroTour,boolean initiative, int entierJoueur1, int entierJoueur2, int rowCoord, int colCoord, String symbolesJoueur1, String symbolesJoueur2, int siVictoire) {
+
     }
 }
