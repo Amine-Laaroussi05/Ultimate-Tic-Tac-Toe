@@ -130,21 +130,21 @@ class MainTest {
         for (String s : listeStringJoueur1) listeJoueur1.add(Integer.parseInt(s));
         ArrayList<Integer> listeJoueur2 = new ArrayList<>();
         for (String s : listeStringJoueur2) listeJoueur2.add(Integer.parseInt(s));
-        String texte = tapSystemOut(() -> {
-            String ligne1 = "**********";
-            ArrayList<StringBuilder> lignes = new ArrayList<>();
-            for(int numeroLigne = 0; numeroLigne<3; numeroLigne++){
-                StringBuilder ligne = new StringBuilder("|");
-                for(int indice=0; indice<3; indice++){
-                    if(listeJoueur1.contains(indice+2*numeroLigne)) ligne.append("x");
-                    else if(listeJoueur2.contains(indice+2*numeroLigne)) ligne.append("o");
-                    else ligne.append(" ");
-                    ligne.append("|");
-                }
-                lignes.add(ligne);
+        StringBuilder ligne = new StringBuilder("_______\n|");
+        for(int numeroLigne = 1; numeroLigne<4; numeroLigne++){
+            for(int indice=1; indice<4; indice++){
+                if(listeJoueur1.contains(indice+3*(numeroLigne-1))) ligne.append("x");
+                else if(listeJoueur2.contains(indice+3*(numeroLigne-1))) ligne.append("o");
+                else ligne.append(" ");
+                ligne.append("|");
             }
-            String ligne5 = "**********";
+            if(numeroLigne != 3) ligne.append("\n|");
+            else ligne.append("\n");
+        }
+        String texteActuel = tapSystemOut(() -> {
+            Main.illustrationJeu(entierJoueur1,entierJoueur2);
         });
+        assertEquals(ligne.toString(), texteActuel);
     }
 
 

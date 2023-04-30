@@ -28,12 +28,12 @@ public class Main {
      * @return : L'ensemble des emplacements des symboles du joueur
      */
     public static Set<Integer> positionSymboles(int entierJoueur){
-        Set<Integer> listeEmplacement = new HashSet<>();
-        if(entierJoueur > 512 | entierJoueur < 0) throw new IllegalArgumentException();
-        for(int indice = 8; indice > -1; indice--){
-            if(entierJoueur >= Math.pow(2,indice)){
-                listeEmplacement.add(indice);
-                entierJoueur -= Math.pow(2,indice);
+        Set<Integer> listeEmplacement = new HashSet<>(); // L'ensemble des emplacements des symboles du joueur
+        if(entierJoueur > 512 | entierJoueur < 0) throw new IllegalArgumentException(); // l'entier doit être compris entre 1 et 512 inclus
+        for(int indice = 8; indice > -1; indice--){ // on parcourt les 9 cases de la grille 3x3 numérotées de 1 à 9
+            if(entierJoueur >= Math.pow(2,indice)){ // si l'entier est supérieur à 2^(n° de la case), on ajoute ce n° à l'ensemble
+                listeEmplacement.add(indice+1);
+                entierJoueur -= Math.pow(2,indice); // et on enlève cet entier du paramètre entierJoueur
             }
         }
         return listeEmplacement;
@@ -46,16 +46,30 @@ public class Main {
      * @return : true ou false selon si les symboles sont alignés ou pas
      */
     public static boolean conditionDeVictoire(int entierJoueur){
-        List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448);
-        Set<Integer> listeEntiersPredefinis = new HashSet<>(entiersPredefinis);
-        return listeEntiersPredefinis.contains(entierJoueur);
+        List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448); // La liste des entiers prédéfinis permettant la victoire
+        Set<Integer> listeEntiersPredefinis = new HashSet<>(entiersPredefinis); // Utilisation de la liste comme un ensemble
+        return listeEntiersPredefinis.contains(entierJoueur); // on vérifie si l'ensemble contient le paramètre entierJoueur, si tel est le cas, on retourne true, sinon false
     }
 
 
-
-
+    /**
+     * Méthode qui permet d'illustrer l'emplacement des symboles de chaque joueur
+     * @param entierJoueur1 : l'entier affecté au joueur1
+     * @param entierJoueur2 : l'entier affecté au joueur2
+     */
     public static void illustrationJeu(int entierJoueur1, int entierJoueur2){
-
+        StringBuilder lignesJeu = new StringBuilder("_______\n|");
+        for(int numeroLigne = 1; numeroLigne < 4; numeroLigne++){
+            for(int numeroCase = 1; numeroCase < 4; numeroCase++){
+                if(positionSymboles(entierJoueur1).contains(numeroCase+3*(numeroLigne-1))) lignesJeu.append("x");
+                else if(positionSymboles(entierJoueur2).contains(numeroCase+3*(numeroLigne-1))) lignesJeu.append("o");
+                else lignesJeu.append(" ");
+                lignesJeu.append("|");
+            }
+            if(numeroLigne != 3) lignesJeu.append("\n|");
+            else lignesJeu.append("\n");
+        }
+        System.out.print(lignesJeu);
     }
 
 
