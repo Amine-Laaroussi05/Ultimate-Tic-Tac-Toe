@@ -186,7 +186,18 @@ class MainTest {
      */
     @ParameterizedTest
     @CsvFileSource(resources = "/", numLinesToSkip = 1)
-    void main(int numeroTour,boolean initiative, int entierJoueur1, int entierJoueur2, int rowCoord, int colCoord, String symbolesJoueur1, String symbolesJoueur2, int siVictoire) {
-
+    void main(int numeroTour,boolean initiative, int entierJoueur1, int entierJoueur2, int rowCoord, int colCoord, String symbolesJoueur1, String symbolesJoueur2, int siVictoire) throws Exception {
+        String debutTour = tapSystemOut(()->{
+            Main.main(null);
+        });
+        if(initiative){
+            assertEquals("Saisir les coordonnées pour le joueur 1", debutTour);
+            assertEquals(entierJoueur1, Main.calculJoueur(rowCoord, colCoord));
+            String grille = tapSystemOut(()->{
+                Main.main(null);
+            });
+        }
+        else assertEquals("Saisir les coordonnées pour le joueur 2", debutTour);
     }
+
 }
