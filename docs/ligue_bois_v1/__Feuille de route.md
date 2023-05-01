@@ -42,6 +42,16 @@
 
 9. Suppression des actions jouées par le joueur ou l'adversaire durant ce tour du nombre d'actions valides
 
+## Notes de correction
+
+- Méthode pour vérifier que les coordonnées saisies n'ont pas été saisies précédemment par un autre joueur ou lors d'un tour ultérieur
+
+> Nouvelle méthode `coordonneesValides`
+
+- Prise en compte des paramètres `entierJoueur1` et `entierJoueur2` de leur valeur précédente
+
+> `+=` au lieu d'un `=` dans la méthode main()
+
 ## Étape suivante envisagée
 
 1. Analyse du jeu de l'adversaire et saisi d'entiers convenables à la situation de jeu

@@ -77,7 +77,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         int rowCoord;
         int colCoord;
-        int entierJoueur1;
+        int entierJoueur1 = 0;
         int entierJoueur2 = 0;
         Scanner scanner = new Scanner(System.in);
         for(int numeroTour = 1; numeroTour < 6; numeroTour++){
@@ -85,7 +85,7 @@ public class Main {
                 System.out.println("\nSaisir une coordonnée pour le joueur 1");
                 rowCoord = scanner.nextInt();
                 colCoord = scanner.nextInt();
-                entierJoueur1 = calculJoueur(rowCoord,colCoord);
+                entierJoueur1 += calculJoueur(rowCoord,colCoord);
                 illustrationJeu(entierJoueur1,entierJoueur2);
                 if(conditionDeVictoire(entierJoueur1)){
                     System.out.println("\nBravo, le joueur 1 a gagné la partie !");
@@ -95,7 +95,7 @@ public class Main {
                 System.out.println("\nSaisir une coordonnée pour le joueur 2");
                 rowCoord = scanner.nextInt();
                 colCoord = scanner.nextInt();
-                entierJoueur2 = calculJoueur(rowCoord,colCoord);
+                entierJoueur2 += calculJoueur(rowCoord,colCoord);
                 illustrationJeu(entierJoueur1,entierJoueur2);
                 if(conditionDeVictoire(entierJoueur2)){
                     System.out.println("\nBravo, le joueur 2 a gagné la partie !");
