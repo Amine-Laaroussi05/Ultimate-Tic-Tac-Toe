@@ -30,12 +30,8 @@ public static boolean conditionDeVictoire(int entier){
    
    > entier = 73, 146, 292, 7, 56, 448, 273, 84
 
-4. 
+4. Avec 4 symboles saisis dont 3 alignés
 
----
+5. Avec 5 symboles saisis dont 3 alignés
 
-## Formalisme de la méthode
-
-1. Si l'ensemble contient cet entier, la condition est vérifiée
-
-2. Si l'ensemble ne contient pas cet entier, la condition n'est pas vérifiée
+6. Avec 5 symboles saisis réalisants deux alignements

@@ -52,6 +52,8 @@
 
 > `+=` au lieu d'un `=` dans la méthode main()
 
+- Amélioration de la méthode `conditionVictoire` qui ne considérait pas la possibilité d'avoir 4 symboles dont 3 alignés.
+
 ## Étape suivante envisagée
 
 1. Analyse du jeu de l'adversaire et saisi d'entiers convenables à la situation de jeu

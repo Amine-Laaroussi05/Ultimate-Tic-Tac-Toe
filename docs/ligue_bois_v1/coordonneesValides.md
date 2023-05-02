@@ -33,5 +33,3 @@ public static boolean coordonneesValide(int rowCoord, int colCoord, int entierJo
 4. Le joueur 2 utilise une coordonnée qui a été utilisé par le joueur 1
 
 5. Saisi  de coordonnées ou d'entiers non valides
-
-

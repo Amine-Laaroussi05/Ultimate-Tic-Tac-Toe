@@ -95,8 +95,8 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        int rowCoord;
-        int colCoord;
+        int rowCoord = 0;
+        int colCoord = 0;
         int entierJoueur1 = 0;
         int entierJoueur2 = 0;
         Scanner scanner = new Scanner(System.in);
@@ -105,23 +105,29 @@ public class Main {
                 System.out.println("\nSaisir une coordonnée pour le joueur 1");
                 rowCoord = scanner.nextInt();
                 colCoord = scanner.nextInt();
-                entierJoueur1 += calculJoueur(rowCoord,colCoord);
+                if(coordonneeValide(rowCoord,colCoord, entierJoueur1, entierJoueur2)) entierJoueur1 += calculJoueur(rowCoord,colCoord);
+                else throw new IllegalArgumentException("Coordonnée non valide");
                 illustrationJeu(entierJoueur1,entierJoueur2);
+            System.out.println("entierJoueur1 = " + entierJoueur1);
                 if(conditionDeVictoire(entierJoueur1)){
                     System.out.println("\nBravo, le joueur 1 a gagné la partie !");
+                    break;
+                }
+                if(numeroTour == 5){
+                    System.out.println("\nPartie terminée. Aucun vainqueur.");
                     break;
                 }
                 // Tour du joueur 2
                 System.out.println("\nSaisir une coordonnée pour le joueur 2");
                 rowCoord = scanner.nextInt();
                 colCoord = scanner.nextInt();
-                entierJoueur2 += calculJoueur(rowCoord,colCoord);
+                if(coordonneeValide(rowCoord,colCoord,entierJoueur1,entierJoueur2)) entierJoueur2 += calculJoueur(rowCoord,colCoord);
+                else throw new IllegalArgumentException("Coordonnée non valide");
                 illustrationJeu(entierJoueur1,entierJoueur2);
                 if(conditionDeVictoire(entierJoueur2)){
                     System.out.println("\nBravo, le joueur 2 a gagné la partie !");
                     break;
                 }
-                if(numeroTour == 5) System.out.println("\nPartie terminée. Aucun vainqueur.");
         }
 
     }
