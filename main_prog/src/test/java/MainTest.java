@@ -161,6 +161,22 @@ class MainTest {
 
 
 
+
+
+    // _________________________________________________coordonnéeValide____________________________________________________________
+
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/coordonnee_Valide/Tests", numLinesToSkip = 1)
+    public void coordonneeValide(int rowCoord, int colCoord, int entierJoueur1, int entierJoueur2, boolean siValide){
+        if(siValide) assertTrue(Main.coordonneeValide(rowCoord, colCoord, entierJoueur1, entierJoueur2));
+        else assertFalse(Main.coordonneeValide(rowCoord, colCoord, entierJoueur1, entierJoueur2));
+    }
+
+
+
+
+
     // _________________________________________________main____________________________________________________________
 
 

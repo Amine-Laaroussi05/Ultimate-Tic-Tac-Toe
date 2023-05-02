@@ -2,7 +2,7 @@
 
 ## Description
 
-Permet de vérifier que les coordonnées saisies par le joueur n'ont pas été précédemment utilisées par un autre joueur lors de ce tour ou un tour précédent.
+Permet de vérifier que les coordonnées saisies par le joueur n'ont pas été précédemment utilisées par ce joueur ou un autre joueur lors de ce tour ou un tour précédent.
 
 ## Syntaxe
 
@@ -18,9 +18,9 @@ public static boolean coordonneesValide(int rowCoord, int colCoord, int entierJo
 
 - `colCoord` : La composante en colonne de la coordonnée
 
-- `entierJoueur1` : L'entier affecté au joueur 1
+- `entierJoueur1` : L'entier affecté au joueur 1 encodant l'emplacement de ces symboles
 
-- `entierJoueur2` : L'entier affecté au joueur 2
+- `entierJoueur2` : L'entier affecté au joueur 2 encodant l'emplacement de ces symboles
 
 ## Tests
 

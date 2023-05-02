@@ -74,6 +74,26 @@ public class Main {
 
 
 
+    /**
+     * Permet de vérifier que les coordonnées saisies par le joueur n'ont pas été précédemment utilisées par ce joueur ou un autre joueur lors de ce tour ou un tour précédent.
+     * @param rowCoord : La composante en ligne de la coordonnée
+     * @param colCoord : La composante en colonne de la coordonnée
+     * @param entierJoueur1 : L'entier affecté au joueur 1 encodant l'emplacement de ces symboles
+     * @param entierJoueur2 : L'entier affecté au joueur 2 encodant l'emplacement de ces symboles
+     * @return : True si la coordonnée n'est pas encodée dans un des entiers, False sinon
+     */
+    public static boolean coordonneeValide(int rowCoord, int colCoord, int entierJoueur1, int entierJoueur2){
+        if(rowCoord > 2 | rowCoord < 0 | colCoord > 2 | colCoord < 0 | entierJoueur1 > 512 | entierJoueur1 < 0 | entierJoueur2 > 512 | entierJoueur2 < 0)
+            throw new IllegalArgumentException();
+        Iterator<Integer> iterator = positionSymboles(calculJoueur(rowCoord, colCoord)).iterator(); // Pour parcourir l'ensemble (qui est constitué d'un seul nombre)
+        int nombre = iterator.next(); // Pour utiliser ce nombre
+        return !(positionSymboles(entierJoueur1).contains(nombre) | positionSymboles(entierJoueur2).contains(nombre));
+        // False si ce nombre est encodé dans un des entiers entierJoueur1 ou entierJoueur2
+        // True sinon
+    }
+
+
+
     public static void main(String[] args) throws Exception {
         int rowCoord;
         int colCoord;

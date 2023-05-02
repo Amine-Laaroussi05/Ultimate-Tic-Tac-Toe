@@ -1,0 +1,13 @@
+rowCoord,colCoord,entierJoueur1,entieJoueur2, siValide
+0,0,0,0,True
+1,2,0,0,True
+2,2,0,0,True
+0,0,1,0,False
+0,1,2,0,False
+1,1,16,0,False
+2,2,321,2,False
+1,0,32,4,True
+2,1,128,16,False
+2,1,336,133,False
+1,2,344,133,True
+2,0,338,137,False
