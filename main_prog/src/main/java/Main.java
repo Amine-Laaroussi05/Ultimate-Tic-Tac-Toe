@@ -43,12 +43,28 @@ public class Main {
     /**
      * Évalue si la condition de victoire (à savoir l'alignement des symboles du joueur en vertical, horizontal ou diagonale) est vérifiée
      * @param entierJoueur : l'entier affecté au joueur selon les coordonnées qu'il a saisies le long de la partie
-     * @return : true ou false selon si les symboles sont alignés ou pas
+     * @return : true ou false selon si les symboles sont alignés ou non
      */
     public static boolean conditionDeVictoire(int entierJoueur){
-        List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448); // La liste des entiers prédéfinis permettant la victoire
+        List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448); // La liste des entiers prédéfinis lorsque 3 symboles sont alignés
         Set<Integer> listeEntiersPredefinis = new HashSet<>(entiersPredefinis); // Utilisation de la liste comme un ensemble
-        return listeEntiersPredefinis.contains(entierJoueur); // on vérifie si l'ensemble contient le paramètre entierJoueur, si tel est le cas, on retourne true, sinon false
+        if(positionSymboles(entierJoueur).size() == 3) return listeEntiersPredefinis.contains(entierJoueur);
+        else if(positionSymboles(entierJoueur).size() == 4){
+            for(int numeroCase : positionSymboles(entierJoueur)){
+                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase);
+                if(listeEntiersPredefinis.contains(unSymboleEnMoins)) return true;
+            }
+        }
+        else if(positionSymboles(entierJoueur).size() == 5){
+            for(int numeroCase : positionSymboles(entierJoueur)){
+                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase);
+                for(int numeroCase2 : positionSymboles(unSymboleEnMoins)){
+                    int deuxSymbolesEnMoins = unSymboleEnMoins - (int) Math.pow(2,numeroCase2);
+                    if(listeEntiersPredefinis.contains(deuxSymbolesEnMoins)) return true;
+                }
+            }
+        }
+        return false; // false si l'ensemble ne contient pas le paramètre entierJoueur
     }
 
 
