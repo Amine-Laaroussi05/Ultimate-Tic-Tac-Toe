@@ -9,7 +9,7 @@ entierJoueur,conditionAttendu
 73,True
 74,False
 84,True
-120,False
+120,True
 146,True
 273,True
 291,False
@@ -24,8 +24,8 @@ entierJoueur,conditionAttendu
 300,True
 396,False
 93,True
-285,False
+285,True
 369,True
-117,False
+117,True
 79,True
 309,True

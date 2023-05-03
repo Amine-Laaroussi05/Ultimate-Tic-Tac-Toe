@@ -48,18 +48,18 @@ public class Main {
     public static boolean conditionDeVictoire(int entierJoueur){
         List<Integer> entiersPredefinis = Arrays.asList(7,56,73,84,146,273,292,448); // La liste des entiers prédéfinis lorsque 3 symboles sont alignés
         Set<Integer> listeEntiersPredefinis = new HashSet<>(entiersPredefinis); // Utilisation de la liste comme un ensemble
-        if(positionSymboles(entierJoueur).size() == 3) return listeEntiersPredefinis.contains(entierJoueur);
-        else if(positionSymboles(entierJoueur).size() == 4){
+        if(positionSymboles(entierJoueur).size() == 3) return listeEntiersPredefinis.contains(entierJoueur); // Vérifie si 3 symboles sont alignés
+        else if(positionSymboles(entierJoueur).size() == 4){ // vérifie si les symboles sont alignés en enlevant 1 symbole parmi les 4
             for(int numeroCase : positionSymboles(entierJoueur)){
-                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase);
+                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase-1); // enlève un symbole
                 if(listeEntiersPredefinis.contains(unSymboleEnMoins)) return true;
             }
         }
-        else if(positionSymboles(entierJoueur).size() == 5){
+        else if(positionSymboles(entierJoueur).size() == 5){ // vérifie si les symboles sont alignés en enlevant 2 symboles parmi les 5
             for(int numeroCase : positionSymboles(entierJoueur)){
-                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase);
+                int unSymboleEnMoins = entierJoueur - (int) Math.pow(2,numeroCase-1); // enlève le 1er symbole
                 for(int numeroCase2 : positionSymboles(unSymboleEnMoins)){
-                    int deuxSymbolesEnMoins = unSymboleEnMoins - (int) Math.pow(2,numeroCase2);
+                    int deuxSymbolesEnMoins = unSymboleEnMoins - (int) Math.pow(2,numeroCase2-1); // enlève le 2ème symbole
                     if(listeEntiersPredefinis.contains(deuxSymbolesEnMoins)) return true;
                 }
             }
@@ -110,6 +110,9 @@ public class Main {
 
 
 
+
+
+
     public static void main(String[] args) throws Exception {
         int rowCoord = 0;
         int colCoord = 0;
@@ -124,7 +127,6 @@ public class Main {
                 if(coordonneeValide(rowCoord,colCoord, entierJoueur1, entierJoueur2)) entierJoueur1 += calculJoueur(rowCoord,colCoord);
                 else throw new IllegalArgumentException("Coordonnée non valide");
                 illustrationJeu(entierJoueur1,entierJoueur2);
-            System.out.println("entierJoueur1 = " + entierJoueur1);
                 if(conditionDeVictoire(entierJoueur1)){
                     System.out.println("\nBravo, le joueur 1 a gagné la partie !");
                     break;
