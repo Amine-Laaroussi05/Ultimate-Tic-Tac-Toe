@@ -112,6 +112,27 @@ public class Main {
 
 
 
+    /**
+     * Détermine qui entre le joueur ou l'ordi va débuter la partie
+     * @return : "Joueur" ou "Ordi"
+     */
+    public static String debutTour(){
+        Random random = new Random();
+        int quiDebute = random.ints(1,0,2).iterator().nextInt(); // nombre aléatoire entre 0 et 1
+        if(quiDebute == 1){ // si le nombre obtenu c'est 1, le joueur entame la partie
+            System.out.print("Le joueur va débuter la partie");
+            return "Joueur";
+        }
+        else{ // sinon ce sera à l'ordi de démarrer la partie
+            System.out.print("L'ordi va débuter la partie");
+            return "Ordi";
+        }
+    }
+
+
+
+
+
 
     public static void main(String[] args) throws Exception {
         int rowCoord = 0;

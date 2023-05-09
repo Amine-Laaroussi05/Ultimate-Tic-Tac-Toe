@@ -177,6 +177,33 @@ class MainTest {
 
 
 
+
+
+    // ________________________________________________Début_Tour________________________________________________________
+
+
+    @RepeatedTest(1000)
+    public void debutTour() throws Exception {
+        final String[] obtenuApresMethode = new String[1];
+        String texte = tapSystemOut(()->{
+            obtenuApresMethode[0] = Main.debutTour();
+        });
+        if(texte.equals("Le joueur va débuter la partie")) assertEquals("Joueur",obtenuApresMethode[0]);
+        else assertEquals("Ordi",obtenuApresMethode[0]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     // _________________________________________________main____________________________________________________________
 
 
